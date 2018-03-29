@@ -30,13 +30,17 @@ class ServiceListenerFactory implements FactoryInterface
      */
     protected $defaultServiceConfig = [
         'aliases' => [
-            'Config'                                     => 'config',
-            'configuration'                              => 'config',
-            'Configuration'                              => 'config',
+            'application'       => 'Application',
+            'dispatcher'        => 'Dispatcher',
+            'Config'            => 'config',
+            'configuration'     => 'config',
+            'Configuration'     => 'config',
         ],
         'invokables' => [],
         'factories'  => [
-            'config'                         => ConfigFactory::class,
+            'Application'   => ApplicationFactory::class,
+            'Dispatcher'    => DispatcherFactory::class,
+            'config'        => ConfigFactory::class,
         ],
     ];
 

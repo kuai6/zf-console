@@ -2,10 +2,8 @@
 
 namespace Kuai6\Console;
 
-use Zend\Console\Console;
 use Zend\ServiceManager\ServiceManager;
 use ZF\Console\Application as BaseApplication;
-use ZF\Console\Dispatcher;
 
 /**
  * Class Application
@@ -20,7 +18,7 @@ class Application extends BaseApplication
      * @param array $configuration
      * @return Application
      */
-    public static function init(string $name, string $version, array $configuration = []) :Application
+    public static function init(array $configuration = []) :Application
     {
         $smConfig = isset($configuration['service_manager']) ? $configuration['service_manager'] : [];
         $smConfig = new Service\ServiceManagerConfig($smConfig);
@@ -30,17 +28,6 @@ class Application extends BaseApplication
         // Load modules
         $serviceManager->get('ModuleManager')->loadModules();
 
-        $dispatcher = new Dispatcher($serviceManager);
-
-        $config = $serviceManager->get('config');
-        $routes = array_key_exists('routes', $config) ? $config['routes']: [];
-
-        return new Application(
-            $name,
-            $version,
-            $routes,
-            Console::getInstance(),
-            $dispatcher
-        );
+        return $serviceManager->get('Application');
     }
 }
