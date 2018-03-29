@@ -1,0 +1,33 @@
+{
+    "name": "kuai6/zf-console",
+    "description": "The ZF3 Console Application with ModuleManager",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kuai6",
+            "email": "kuai6@ya.ru"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "zendframework/zend-servicemanager": "^3.3",
+        "zendframework/zend-eventmanager": "^3.2",
+        "zendframework/zend-modulemanager": "^2.8",
+        "zendframework/zend-console": "^2.7",
+        "zfcampus/zf-console": "^1.4",
+        "zendframework/zend-loader": "^2.5"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "~2.9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kuai6\\Console\\": "src/"
+        }
+    },
+    "scripts": {
+        "cs-check": "php-cs-fixer -v fix --config=.php_cs --dry-run ",
+        "cs-fix": "php-cs-fixer -v fix --config=.php_cs --diff"
+    }
+}
