@@ -1,7 +1,7 @@
 {
     "name": "kuai6/zf-console",
     "description": "The ZF3 Console Application with ModuleManager",
-    "license": "MIT License",
+    "license": "MIT",
     "authors": [
         {
             "name": "kuai6",
