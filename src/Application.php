@@ -104,6 +104,8 @@ class Application extends BaseApplication
         $event->setName(Event::EVENT_BOOTSTRAP);
         $event->setTarget($this);
         $event->setParam(Event::OPTION_APPLICATION, $this);
+        $event->setParam(Event::OPTION_SERVICE_MANAGER, $this->getServiceManager());
+        $event->setParam(Event::OPTION_EVENT_MANAGER, $this->getEventManager());
 
         // Trigger bootstrap events
         $this->eventManager->triggerEvent($event);
