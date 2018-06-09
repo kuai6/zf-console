@@ -68,8 +68,6 @@ class Application extends BaseApplication
     }
 
     /**
-     * @param string $name
-     * @param string $version
      * @param array $configuration
      * @return Application
      */

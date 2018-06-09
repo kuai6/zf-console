@@ -1,6 +1,7 @@
 <?php
 
 namespace Kuai6\Console\Service;
+
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
